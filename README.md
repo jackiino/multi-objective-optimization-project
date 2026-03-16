@@ -1,5 +1,7 @@
 Consider the following multi-objective optimization problem:
+
 $$\min_{x\in F} \{ f_1(x), f_2(x), \dots, f_k(x)\}$$
+
 where $k \ge 2$, $f_i:\mathbb{R^n} \rightarrow \mathbb{R}$, for $i = 1, \dots, k$ and $F$ is the $\textit{eligible region}$.\
 The space $\mathbb{R^n}$ is called $\textit{decision variable space}$, while the space $\mathbb{R^k}$ is called $\textit{objective space}$.
 
