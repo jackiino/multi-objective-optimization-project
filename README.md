@@ -30,18 +30,27 @@ Assumining that the company has 1300 working hours and 1000 unity of raw materia
 -Variables. The variables are $x = (x_1, x_2, x_3)$ where $x_i = P_i$, for $i = 1, 2, 3$.
 
 -Constraints. We have two types of constraints, one for the availability of raw material and the second one for the working hours:
+
 $$b_1x_1 + b_2x_2 + b_3x_3 \le 1300 $$
+
 $$c_1x_1 + c_2x_2 + c_3x_3 \le 1000 $$
 
 -Objectives. We wanto to maximize the profit:
+
 $$\max_{x\in\mathbb{R}^3} \{a_1x_1 + a_2x_2 + a_3x_3 \}$$
+
 and to minimize the pollution:
+
 $$\min_{x\in\mathbb{R}^3} \{d_1x_1 + d_2x_2 + d_3x_3\} $$
 
 In summary, we have the following formulation
+
 $$\min_{x\in\mathbb{R}^3}\{-a_1x_1 - a_2x_2 - a_3x_3,\ d_1x_1 + d_2x_2 + d_3x_3\}$$
+
 $$b_1x_1 + b_2x_2 + b_3x_3 \le 1300 $$
+
 $$c_1x_1 + c_2x_2 + c_3x_3 \le 1000 $$
+
 $$x_1, x_2, x_3 \ge 0$$
 
 
@@ -60,8 +69,11 @@ This means that the functions $f_1(x)$ and $f_2(x)$ are in contrast.
 Since we can't find $z^{id}$ we have to define, clearly, what finding an optimal solution in a multi-objective problem means. The following definition was proposed by Edgeworth in 1881. Then, in 1896 Vilfredo Pareto elaborated it.
 
 Given two vectors $z^1,z^2\in\mathbb{R}^k$, we say that $z^1$ Pareto dominates $z^2$ ($z^1 \le_{P} z^2$) when 
+
 $$z^1_i\le z^2_i\quad \text{for every}\ i=1,2,\dots,k$$
+
 $$z^1_j < z^2_j\quad \text{for at least}\ j\in\{1,\dots,k\}$$
+
 The binary relation $\le_P$ is a partial order in the space of $k$-uple of real numbers.
 
 $\mathbf{Def.}$ A decision vector $x^*\in F$ is a Pareto optimal if no exists a vector $x\in F$ such that
