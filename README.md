@@ -46,9 +46,13 @@ $$x_1, x_2, x_3 \ge 0$$
 
 
 Since we want to minimize both the objective functions, we notice that there is not an ideal vector $z^{id}$ defined as following:
-$$z^{id}_i = \min_{x\in F} f_i(x),\ \ \ \ \ \ \text{for}\ i = 1, 2, 3.$$
+
+$$z^{id}_i = \min_{x\in F} f_i(x),\qquad \text{for}\ i = 1, 2, 3.$$
+
 Thus
+
 $$z^{id}\not\in F.$$
+
 This means that the functions $f_1(x)$ and $f_2(x)$ are in contrast.
 
 
