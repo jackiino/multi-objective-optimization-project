@@ -7,7 +7,11 @@ The space $\mathbb{R^n}$ is called $\textit{decision variable space}$, while the
 
 For each decision vector $x\in\mathbb{R^n}$  is associated a vector $z = (f_1(x), f_2(x),\dots,f_k(x))^T\in\mathbb{R^k}$ (objective vector) in the objective space.\
 Let $F\subseteq\mathbb{R^n}$ the eligible region in the decision space, let
-$$Z = f(F) = \{ z\in\mathbb{R^k} : \exists x\in F, z = f(x)\}$$
+
+$$
+Z = f(F) = \lbrace z\in\mathbb{R^k} : \exists x\in F, z = f(x) \rbrace
+$$
+
 then a vector $z\in\mathbb{R^k}$ is said to be $\textit{eligible}$ when $z\in Z$.
 
 
