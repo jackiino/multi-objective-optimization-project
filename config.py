@@ -1,0 +1,12 @@
+n_var = 3                       # individuals has 3 coordinates/genes
+lb = [0, 0, 0]                  # lower bound of values
+ub = [400, 400, 400]            # upper bound of values
+pop_size = 250                  # initial number of individuals in the population
+rate_crossover = 50             # number of individuals that we apply crossower to
+mutation_rate = 40              # number of individuals that we apply mutation to
+mutation_strength = 2           # bounds of uniform distribution
+rate_local_search = 10          # number of individuals that we apply local_search to
+step_size = 2                   # coordinate displacement during local_search
+penalty_factor = 2.0            # penalty factor of individuals that do not satisfy the constraints about the working hours and raw material
+negative_penalty_factor = 0.8   # penalty to be negative
+maximum_generation = 250        # number of iterations
