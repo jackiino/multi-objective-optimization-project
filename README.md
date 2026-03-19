@@ -80,7 +80,7 @@ $$z^1_j < z^2_j\quad \text{for at least}\ j\in\{1,\dots,k\}$$
 
 The binary relation $\le_P$ is a partial order in the space of $k$-uple of real numbers.
 
-$\mathbf{Def.}$ A decision vector $x^*\in F$ is a Pareto optimal if no exists a vector $x\in F$ such that
+$\mathbf{Def.}$ A decision vector $z^1_j < z^2_j\quad \text{for at least}\ x^* \in\{F\}$ is a Pareto optimal if no exists a vector $x\in F$ such that
 $$f(x)\le_P f(x^*)$$
 
 It is evident that attaining an optimal solution is unfeasible, necessitating the consideration of trade-offs. To address this, we turn to multi-objective optimization (MOO) algorithms. We will employ the widely-used NSGA II algorithm to solve the problem initially. 
@@ -126,4 +126,44 @@ Non-dominated Sorting GA II promote the diversity of the solutions using the cro
 
 4. **Find Final Pareto Efficient Solutions:**
    - Identify the Pareto-efficient solutions from the final population.
+  
+
+
+
+Suppose, now, to introduce a third objective. In particular, we assume to have unlimited working hours, but we want to minimize them. Let's modify our formulation:
+
+-Variables. The variables are $x_i$ which each one correspond to $P_i$, for $i = 1, \dots, n$.
+
+-Constrains. We have only one constraint related to the availability of raw material:
+
+$$c_1x_1 + \dots + c_nx_n \le m $$
+
+-Objectives. We wanto to maximize the profit
+
+$$\max_{x\in\mathbb{R}^n} \{a_1x_1 + \dots + a_nx_n\} $$
+
+to minimize the pollution
+
+$$\min_{x\in\mathbb{R}^n} \{d_1x_1 + \dots + d_nx_n\} $$
+
+and to minimize the working hours
+
+$$\min_{x\in\mathbb{R}^n} \{b_1x_1 + \dots + b_nx_n\}$$
+
+In summary, we have the following formulation
+
+$$\min_{x\in\mathbb{R}^n}\{-a_1x_1 - \dots - a_nx_n,\ d_1x_1 + \dots + d_nx_n,\ b_1x_1 + \dots + b_nx_n\}$$
+
+$$c_1x_1 + \dots + c_nx_n \le m $$
+
+$$x_1, \dots, x_n \ge 0$$
+
+It is well known that NSGA III is an improvement of NSGA-II developed for multi-objective optimization problems with more than two objectives. So, our aim is to compare NSGA II with NSGA III. We'll use the pyomoo library since both are optimazed.
+
+# Conclusions
+The problem we started with has been successfully solved, finding its Pareto front. This type of optimization can be very valuable for companies looking to optimize their operations. It's also promising that the problem was solved in a reasonable amount of time.
+
+The comparison between NSGA-II and NSGA-III highlighting the latter's ability to maintain more diversity in solutions is insightful. Maintaining diversity is crucial in multi-objective optimization to explore a broader range of potential solutions. But, NSGA III seems to take more time to solve the problem (it depends on the number of partitions)
+
+It is worth noting that while linear objectives demonstrate effectiveness, the landscape could changes with the introduction of nonlinear equations into the formulation. The incorporation of nonlinear equations may adds complexity to the optimization process.
 
